@@ -1,0 +1,27 @@
+{
+	"name": "fromholdio/silverstripe-enhancedrss",
+	"type": "silverstripe-vendormodule",
+	"description": "A small SilverStripe module that enhances the core RSS Feed Entry template and object with an image.",
+	"license": "BSD-3-Clause",
+	"keywords": ["silverstripe", "rss"],
+	"homepage": "https://github.com/fromholdio/silverstripe-enhancedrss",
+	"support": {
+		"issues": "https://github.com/fromholdio/silverstripe-enhancedrss/issues"
+	},
+	"authors": [{
+		"name": "Luke Fromhold",
+		"homepage": "https://fromhold.io"
+	}],
+	"require": {
+		"php": ">=5.6",
+		"silverstripe/vendor-plugin": "^1.0",
+		"silverstripe/cms": "^4.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Fromholdio\\EnhancedRSS\\": "src/"
+		}
+	},
+	"prefer-stable": true,
+	"minimum-stability": "dev"
+}

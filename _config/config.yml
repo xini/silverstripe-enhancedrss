@@ -1,0 +1,10 @@
+---
+Name: fromholdio-enhancedrss
+---
+SilverStripe\Control\RSS\RSSFeed_Entry:
+  extensions:
+    - Fromholdio\EnhancedRSS\Extensions\RSSFeedEntryExtension
+
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - Fromholdio\EnhancedRSS\Extensions\RSSFeedSiteTreeExtension
