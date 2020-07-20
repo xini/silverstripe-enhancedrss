@@ -1,6 +1,6 @@
 <?php
 
-namespace Fromholdio\EnhancedRSS\Extensions;
+namespace Innoweb\EnhancedRSS\Extensions;
 
 use SilverStripe\CMS\Model\SiteTreeExtension;
 use SilverStripe\Control\RSS\RSSFeed;

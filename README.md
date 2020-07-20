@@ -8,7 +8,7 @@ A small SilverStripe module that enhances the core RSS Feed Entry template and o
 
 ## Installation
 
-`composer require fromholdio/silverstripe-enhancedrss`
+`composer require innoweb/silverstripe-enhancedrss`
 
 ## Details & Usage
 

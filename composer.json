@@ -22,12 +22,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Fromholdio\\EnhancedRSS\\": "src/"
+			"Innoweb\\EnhancedRSS\\": "src/"
 		}
 	},
 	"prefer-stable": true,
 	"minimum-stability": "dev",
     "replace": {
-        "fromholdio/silverstripe-enhancedrss": "self.version"
+        "innoweb/silverstripe-enhancedrss": "self.version"
     }
 }

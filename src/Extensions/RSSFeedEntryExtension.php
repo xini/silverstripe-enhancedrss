@@ -1,6 +1,6 @@
 <?php
 
-namespace Fromholdio\EnhancedRSS\Extensions;
+namespace Innoweb\EnhancedRSS\Extensions;
 
 use SilverStripe\Core\Extension;
 use SilverStripe\Core\Manifest\ModuleLoader;
@@ -45,7 +45,7 @@ class RSSFeedEntryExtension extends Extension
         $isEnabled = (bool) $this->getOwner()->config()->get('enable_feature_image');
         if ($isEnabled) {
             $isEnabled = ModuleLoader::inst()->getManifest()
-                ->moduleExists('fromholdio/silverstripe-featureimage');
+                ->moduleExists('innoweb/silverstripe-featureimage');
         }
         $this->getOwner()->invokeWithExtensions('updateIsFeatureImageEnabled', $isEnabled);
         return $isEnabled;
