@@ -28,6 +28,6 @@
 	"prefer-stable": true,
 	"minimum-stability": "dev",
     "replace": {
-        "innoweb/silverstripe-enhancedrss": "self.version"
+        "fromholdio/silverstripe-enhancedrss": "self.version"
     }
 }
