@@ -23,7 +23,6 @@ class RSSFeedEntryExtension extends Extension
             $image = $entry->getInheritedFeatureImage();
         }
         if ($image) {
-            $image->MimeType = mime_content_type($image->getFilename());
             return $image;
         }
         return null;
