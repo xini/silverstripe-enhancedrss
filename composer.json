@@ -16,17 +16,13 @@
 		"homepage": "https://innoweb.com.au"
 	}],
 	"require": {
-		"php": ">=5.6",
-		"silverstripe/vendor-plugin": "^1.0",
-		"silverstripe/cms": "^4.2"
+		"silverstripe/cms": "^5"
 	},
 	"autoload": {
 		"psr-4": {
 			"Innoweb\\EnhancedRSS\\": "src/"
 		}
 	},
-	"prefer-stable": true,
-	"minimum-stability": "dev",
     "replace": {
         "fromholdio/silverstripe-enhancedrss": "self.version"
     }

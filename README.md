@@ -9,7 +9,7 @@ A small SilverStripe module that enhances the core RSS Feed Entry template and o
 
 ## Requirements
 
-* SilverStripe CMS 4.x
+* SilverStripe CMS 5.x
 
 ## Installation
 
