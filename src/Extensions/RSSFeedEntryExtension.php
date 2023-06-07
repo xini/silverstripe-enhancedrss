@@ -2,6 +2,7 @@
 
 namespace Innoweb\EnhancedRSS\Extensions;
 
+use SilverStripe\Core\ClassInfo;
 use SilverStripe\Core\Extension;
 use SilverStripe\Core\Manifest\ModuleLoader;
 
@@ -20,7 +21,11 @@ class RSSFeedEntryExtension extends Extension
             $image = $entry->getSocialMetaValue('Image');
         }
         else if ($this->getOwner()->getIsFeatureImageEnabled()) {
-            $image = $entry->getInheritedFeatureImage();
+            if (ClassInfo::hasMethod($entry, 'getInheritedFeatureImage')) {
+                $image = $entry->getInheritedFeatureImage();
+            } else {
+                $image = $entry->getFeatureImage();
+            }
         }
         if ($image) {
             return $image;
