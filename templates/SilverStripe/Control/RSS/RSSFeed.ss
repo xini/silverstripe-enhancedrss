@@ -9,9 +9,11 @@
 		<% loop $Entries %>
 		<item>
 			<title>$Title.XML</title>
-			<link>$AbsoluteLink</link>
-			<% if $Description %><description>$Description.AbsoluteLinks.XML</description><% end_if %>
-			<% if $PublishDate %><pubDate>$PublishDate.Rfc822</pubDate>
+            <link><% if $RSSLink %>$RSSLink<% else %>$AbsoluteLink<% end_if %></link>
+			<% if $RSSContent %><description>$RSSContent.XML</description>
+            <% else_if $Description %><description>$Description.AbsoluteLinks.XML</description><% end_if %>
+            <% if $RSSPublishDate %><pubDate>$RSSPublishDate.Rfc822</pubDate>
+            <% else_if $PublishDate %><pubDate>$PublishDate.Rfc822</pubDate>
 			<% else_if $Date %><pubDate>$Date.Rfc822</pubDate>
 			<% else %><pubDate>$Created.Rfc822</pubDate><% end_if %>
 			<% if $Author %><dc:creator>$Author.XML</dc:creator><% end_if %>

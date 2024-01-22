@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.1.0]
+
+* make RSS template more versatile by adding $RSSLink and $RSSContent fields to items
+
 ## [3.0.1]
 
 * fix for new feature image field and method
