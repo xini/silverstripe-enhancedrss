@@ -14,20 +14,19 @@ class RSSFeedEntryExtension extends Extension
     public function Image()
     {
         $entry = $this->getOwner()->failover;
-        if ($entry->hasMethod('getRSSFeedEntryImage')) {
-            $image = $entry->getRSSFeedEntryImage();
+        if ($entry->hasMethod('getRSSFeedEntryImage') && ($image = $entry->getRSSFeedEntryImage())) {
+            return $image;
         }
-        else if ($this->getOwner()->getIsSocialMetaEnabled()) {
-            $image = $entry->getSocialMetaValue('Image');
+        else if ($this->getOwner()->getIsSocialMetaEnabled() && ($image = $entry->getSocialMetaValue('Image'))) {
+            return $image;
         }
         else if ($this->getOwner()->getIsFeatureImageEnabled()) {
-            if (ClassInfo::hasMethod($entry, 'getInheritedFeatureImage')) {
-                $image = $entry->getInheritedFeatureImage();
-            } else {
-                $image = $entry->getFeatureImage();
+            if (ClassInfo::hasMethod($entry, 'getInheritedFeatureImage') && ($image = $entry->getInheritedFeatureImage())) {
+                return $image;
+            } elseif ($image = $entry->getFeatureImage()) {
+                return $image;
             }
-        }
-        if ($image) {
+        } elseif (ClassInfo::hasMethod($entry, 'getFeatureImage') && ($image = $entry->getFeatureImage())) {
             return $image;
         }
         return null;
