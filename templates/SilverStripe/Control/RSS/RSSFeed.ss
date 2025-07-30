@@ -9,7 +9,7 @@
 		<% loop $Entries %>
 		<item>
 			<title>$Title.XML</title>
-            <link><% if $RSSLink %>$RSSLink<% else %>$AbsoluteLink<% end_if %></link>
+            <link><% if $RSSFeedEntryLink %>$RSSFeedEntryLink<% else %>$AbsoluteLink<% end_if %></link>
 			<% if $RSSContent %><description>$RSSContent.XML</description>
             <% else_if $Description %><description>$Description.AbsoluteLinks.XML</description><% end_if %>
             <% if $RSSPublishDate %><pubDate>$RSSPublishDate.Rfc822</pubDate>
