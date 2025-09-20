@@ -2,10 +2,10 @@
 
 namespace Innoweb\EnhancedRSS\Extensions;
 
-use SilverStripe\CMS\Model\SiteTreeExtension;
 use SilverStripe\Control\RSS\RSSFeed;
+use SilverStripe\Core\Extension;
 
-class RSSFeedSiteTreeExtension extends SiteTreeExtension
+class RSSFeedSiteTreeExtension extends Extension
 {
     public function onAfterInit()
     {
