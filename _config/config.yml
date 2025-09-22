@@ -5,6 +5,6 @@ SilverStripe\Control\RSS\RSSFeed_Entry:
   extensions:
     - Innoweb\EnhancedRSS\Extensions\RSSFeedEntryExtension
 
-SilverStripe\CMS\Model\SiteTree:
+SilverStripe\CMS\Controller\ContentController:
   extensions:
-    - Innoweb\EnhancedRSS\Extensions\RSSFeedSiteTreeExtension
+    - Innoweb\EnhancedRSS\Extensions\ControllerExtension

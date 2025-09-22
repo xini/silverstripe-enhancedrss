@@ -9,6 +9,7 @@ use SilverStripe\Core\Manifest\ModuleLoader;
 class RSSFeedEntryExtension extends Extension
 {
     private static $enable_social_meta_image = true;
+
     private static $enable_feature_image = true;
 
     public function Image()
@@ -16,11 +17,9 @@ class RSSFeedEntryExtension extends Extension
         $entry = $this->getOwner()->failover;
         if ($entry->hasMethod('getRSSFeedEntryImage') && ($image = $entry->getRSSFeedEntryImage())) {
             return $image;
-        }
-        else if ($this->getOwner()->getIsSocialMetaEnabled() && ($image = $entry->getSocialMetaValue('Image'))) {
+        } elseif ($this->getOwner()->getIsSocialMetaEnabled() && ($image = $entry->getSocialMetaValue('Image'))) {
             return $image;
-        }
-        else if ($this->getOwner()->getIsFeatureImageEnabled()) {
+        } elseif ($this->getOwner()->getIsFeatureImageEnabled()) {
             if (ClassInfo::hasMethod($entry, 'getInheritedFeatureImage') && ($image = $entry->getInheritedFeatureImage())) {
                 return $image;
             } elseif ($image = $entry->getFeatureImage()) {
@@ -29,6 +28,7 @@ class RSSFeedEntryExtension extends Extension
         } elseif (ClassInfo::hasMethod($entry, 'getFeatureImage') && ($image = $entry->getFeatureImage())) {
             return $image;
         }
+
         return null;
     }
 
@@ -39,6 +39,7 @@ class RSSFeedEntryExtension extends Extension
             $isEnabled = ModuleLoader::inst()->getManifest()
                 ->moduleExists('innoweb/silverstripe-social-metadata');
         }
+
         $this->getOwner()->invokeWithExtensions('updateIsSocialMetaEnabled', $isEnabled);
         return $isEnabled;
     }
@@ -50,6 +51,7 @@ class RSSFeedEntryExtension extends Extension
             $isEnabled = ModuleLoader::inst()->getManifest()
                 ->moduleExists('innoweb/silverstripe-featureimage');
         }
+
         $this->getOwner()->invokeWithExtensions('updateIsFeatureImageEnabled', $isEnabled);
         return $isEnabled;
     }
