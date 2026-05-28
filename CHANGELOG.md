@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.0.1]
+
+* fix controller extension config
+* remove obsolete sitetree extension
+* add RSSImage hook in template
+
 ## [4.0.0]
 
 * upgrade to Silverstripe 6
