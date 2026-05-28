@@ -17,8 +17,7 @@
 			<% else_if $Date %><pubDate>$Date.Rfc822</pubDate>
 			<% else %><pubDate>$Created.Rfc822</pubDate><% end_if %>
 			<% if $Author %><dc:creator>$Author.XML</dc:creator><% end_if %>
-			<% if $RSSImage %><media:content url="$RSSImage.FocusFill(360,240).AbsoluteURL" type="$RSSImage.MimeType" width="360" height="240" />
-            <% else_if $Image %><media:content url="$Image.FocusFill(360,240).AbsoluteURL" type="$Image.MimeType" width="360" height="240" /><% end_if %>
+			<% if $Image %><media:content url="$Image.FocusFill(360,240).AbsoluteURL" type="$Image.MimeType" width="360" height="240" /><% end_if %>
 			<guid>$AbsoluteLink</guid>
 		</item>
 		<% end_loop %>
